@@ -1,0 +1,238 @@
+builtin unset VSCODE_INJECTION
+[ -z "$VSCODE_SHELL_INTEGRATION" ]
+[ -n "${VSCODE_ENV_REPLACE:-}" ]
+[ -n "${VSCODE_ENV_PREPEND:-}" ]
+[ -n "${VSCODE_ENV_APPEND:-}" ]
+[[ "$(uname -s)" =~ ^CYGWIN*|MINGW*|MSYS* ]]
+[[ "$HISTCONTROL" =~ .. ]]
+__vsc_history_verify=1
+__vsc_initialized=0
+__vsc_original_PS1="$PS1"
+__vsc_original_PS2="$PS2"
+__vsc_custom_PS1=""
+__vsc_custom_PS2=""
+__vsc_in_command_execution="1"
+__vsc_current_command=""
+__vsc_nonce="$VSCODE_NONCE"
+unset VSCODE_NONCE
+[[ -n "${bash_preexec_imported:-}" ]]
+__vsc_dbg_trap="$(__vsc_get_trap DEBUG)"
+[[ -z "$__vsc_dbg_trap" ]]
+[[ "$__vsc_dbg_trap" != '__vsc_preexec "$_"' && "$__vsc_dbg_trap" != '__vsc_preexec_all "$_"' ]]
+trap '__vsc_preexec_all "$_"' DEBUG
+__vsc_original_prompt_command=${PROMPT_COMMAND:-}
+echo hello bash
+touch questionnaire.sh
+echo hello questionnaire
+sh questionnaire.sh
+bash questionnaire.sh
+which bash
+./questionnaire.sh
+ls --color=auto -l
+chmod +x questionnaire.sh
+ls --color=auto -l
+./questionnaire.sh
+ls --color=auto -l
+./questionnaire.sh
+./questionnaire.sh
+./questionnaire.sh
+./questionnaire.sh
+echo --help
+man echo
+./questionnaire.sh
+./questionnaire.sh
+./questionnaire.sh
+./questionnaire.sh
+./questionnaire.sh
+touch countdown.sh
+chmod +x countdown.sh
+./countdown.sh
+./countdown.sh arg1 arg2 arg3
+./countdown.sh arg1 arg2 arg3
+echo $2
+echo
+./countdown.sh arg1 arg2 arg3
+./countdown.sh arg1 arg2 arg3
+echo $1
+echo $1
+echo $1
+./countdown.sh arg1 arg2 arg3
+__vsc_prompt_cmd_original
+help
+man if
+__vsc_prompt_cmd_original
+help if
+arg1
+echo arg1
+./countdown.sh arg1
+./countdown.sh arg1
+./countdown.sh
+./countdown.sh
+./countdown.sh 4
+./countdown.sh 5
+help false
+help
+help if
+help if
+help expression
+help if
+help [[expression]]
+help [[ expression ]]
+help
+help test
+__vsc_prompt_cmd_original
+./countdown.sh 5
+./countdown.sh [[ 4 -le 5 ]]
+[[ 4 -le 5 ]]
+echo $?
+[[ 4 -ge 5 ]]
+echo
+echo $?
+echo $?
+echo
+echo [[ 4 -ge 5 ]]
+echo $? [[ 4 -ge 5 ]]
+echo $?
+echo $?
+echo [[ 4 -ge 5 ]]
+echo $?
+__vsc_prompt_cmd_original
+[[ 4 -ge 5 ]]
+echo $?
+[[ 4 -ge 5 ]]
+[[ 10 -ne 5 ]]
+bad_command
+bad_command
+ls --color=auto
+bad_command
+bad_command
+bad_command
+bad_command
+ls --color=auto
+hist
+history
+ls --color=auto -y
+ls --color=auto -y
+man -y
+help -y
+help test
+[[ -a countdown.sh ]]
+bad_file.txt
+[[ -a countdown.sh ]]
+[[ -a bad_file.txt ]]
+help test
+[[ -x bad_file.txt ]]
+[[ -x countdown.sh ]]
+help [[ expression ]]
+[[ -x countdown.sh && 5 -le 4 ]]
+[[ -x countdown.sh || 5 -le 4 ]]
+./countdown.sh
+./countdown.sh
+./countdown.sh
+./countdown.sh 1
+./countdown.sh 4
+4
+4
+./countdown.sh
+help
+./countdown.sh 10
+help
+ls --color=auto /
+ls --color=auto /bin
+man sleep
+sleep 3
+./countdown.sh sleep 1
+countdown.sh sleep 1
+./countdown.sh 3
+countdown.sh sleep 1
+countdown.sh
+3
+countdown.sh 3
+countdown.sh 3
+countdown.sh 3
+countdown.sh 3
+./countdown.sh 3
+./countdown.sh 1
+help while
+./countdown.sh 5
+touch bingo.sh
+chmod +x bingo.sh
+./bingo.sh
+printenv
+echo $LANG
+declare -p
+echo $RANDOM ~
+echo $RANDOM
+./bingo.sh
+./bingo.sh
+./bingo.sh
+I=0
+echo
+echo I
+__vsc_prompt_cmd_original
+echo I
+echo $I
+((I++))
+echo I
+echo $I
+help let
+((I++10))
+((I += 10))
+echo $I
+$((I + 4))
+$((I + 4))
+echo $((I + 4))
+echo I
+echo $I
+__vsc_prompt_cmd_original
+J=$((I +- 6))
+J=$((I - 6))
+echo $J
+echo $(( J bingo.sh countdown.sh questionnaire.sh 5 + 25 ))
+echo $J
+declare -p
+declare -p J
+declare -p RANDOM
+echo $(( RANDOM % 75 ))
+echo $(( RANDOM % 75 + 1 ))
+./bingo.sh
+./bingo.sh
+help let
+help test
+help test
+./bingo.sh
+./bi
+./bingo.sh
+./bingo.sh
+touch fortune.sh
+chmod +x fortune.sh
+builtin unset VSCODE_INJECTION
+[ -z "$VSCODE_SHELL_INTEGRATION" ]
+[ -n "${VSCODE_ENV_REPLACE:-}" ]
+[ -n "${VSCODE_ENV_PREPEND:-}" ]
+[ -n "${VSCODE_ENV_APPEND:-}" ]
+[[ "$(uname -s)" =~ ^CYGWIN*|MINGW*|MSYS* ]]
+[[ "$HISTCONTROL" =~ .. ]]
+__vsc_history_verify=1
+__vsc_initialized=0
+__vsc_original_PS1="$PS1"
+__vsc_original_PS2="$PS2"
+__vsc_custom_PS1=""
+__vsc_custom_PS2=""
+__vsc_in_command_execution="1"
+__vsc_current_command=""
+__vsc_nonce="$VSCODE_NONCE"
+unset VSCODE_NONCE
+[[ -n "${bash_preexec_imported:-}" ]]
+__vsc_dbg_trap="$(__vsc_get_trap DEBUG)"
+[[ -z "$__vsc_dbg_trap" ]]
+[[ "$__vsc_dbg_trap" != '__vsc_preexec "$_"' && "$__vsc_dbg_trap" != '__vsc_preexec_all "$_"' ]]
+trap '__vsc_preexec_all "$_"' DEBUG
+__vsc_original_prompt_command=${PROMPT_COMMAND:-}
+git init
+ls --color=auto -a
+mr .git
+mr -r .git
+rm -r .git
+git init
+git add .
